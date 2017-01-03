@@ -1,21 +1,15 @@
+/*
+MIAGE M2 SID
+Semestre 9 - Multimédia
+TP1 - Canvas
+
+Auteurs:
+  - Maxime BLAISE
+  - Antoine NOSAL
+*/
+
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
-ctx.moveTo(10,240);
-ctx.lineTo(190,240);
-ctx.lineTo(160,10);
-//ctx.lineTo(40,10); Etape 3
-ctx.moveTo(40,10);
-ctx.lineTo(10,240);
-ctx.stroke();
-
-// Ajout des yeux (étape 2)
-ctx.beginPath();
-ctx.arc(74,94,26,0,2*Math.PI);
-ctx.stroke();
-ctx.beginPath();
-ctx.arc(126,94,26,0,2*Math.PI);
-ctx.stroke();
-
 
 // Ajout de la ligne rouge (étape 2)
 /*ctx.beginPath();
@@ -24,14 +18,16 @@ ctx.lineTo(200,120);
 ctx.strokeStyle = '#ff0000';
 ctx.stroke();*/
 
-// Ajout des oreilles (étape 3)
-ctx.beginPath();
-ctx.moveTo(40,10);
-ctx.lineTo(65,60);
-ctx.moveTo(160,10);
+// Ajout du corps (étape 1)
+ctx.moveTo(10,240);
+ctx.lineTo(190,240);
+ctx.lineTo(160,10);
 ctx.lineTo(135,60);
-ctx.moveTo(65,60);
-ctx.quadraticCurveTo(100,50,135,60);
+ctx.quadraticCurveTo(100,50,65,60);
+ctx.lineTo(40,10);
+//ctx.lineTo(40,10); (nécessaire pour l'étape 3)
+ctx.moveTo(40,10);
+ctx.lineTo(10,240);
 ctx.strokeStyle = '#000000';
 ctx.stroke();
 ctx.fillStyle="lightgray";
@@ -59,19 +55,33 @@ ctx.stroke();
 ctx.fillStyle="lightgray";
 ctx.fill();
 
-// Etape 5 : Oeil gauche
+// Ajout des yeux (étape 2)
+ctx.beginPath();
+ctx.arc(74,94,26,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle="white";
+ctx.fill();
+ctx.beginPath();
+ctx.arc(126,94,26,0,2*Math.PI);
+ctx.stroke();
+ctx.fillStyle="white";
+ctx.fill();
+
+// Ajout de l'oeil gauche (étape 5)
 ctx.beginPath();
 ctx.arc(85,95,4,0,2*Math.PI);
-ctx.fill();
 ctx.stroke();
+ctx.fillStyle="black";
+ctx.fill();
 
-// Etape 5 :  Oeil droit
+// Ajout de l'oeil droit (étape 5)
 ctx.beginPath();
 ctx.arc(115,95,4,0,2*Math.PI);
-ctx.fill();
 ctx.stroke();
+ctx.fillStyle="black";
+ctx.fill();
 
-// Etape 5 : Nez + Boucle
+// Ajout du nez et de la bouche (étape 5)
 ctx.beginPath();
 ctx.moveTo(100,120);
 ctx.lineTo(100,140);
@@ -80,7 +90,7 @@ ctx.moveTo(100,140);
 ctx.lineTo(140,134);
 ctx.stroke();
 
-// Etape 5 : Moustaches
+// Ajout des moustaches gauche (étape 5)
 ctx.beginPath();
 ctx.arc(100,118,2,0,2*Math.PI);
 ctx.moveTo(100,118);
@@ -95,7 +105,7 @@ ctx.stroke();
 ctx.fillStyle="lightgray";
 ctx.fill();
 
-// Effets sur les pattes (étape 5)
+// Ajout des effets sur les pattes (étape 5)
 ctx.beginPath();
 ctx.moveTo(20,240);
 ctx.lineTo(20,230);
