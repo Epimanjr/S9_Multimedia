@@ -16,13 +16,6 @@ ctx.beginPath();
 ctx.arc(126,94,26,0,2*Math.PI);
 ctx.stroke();
 
-// Ajout de la ligne rouge (étape 2)
-ctx.beginPath();
-ctx.moveTo(0,120);
-ctx.lineTo(200,120);
-ctx.strokeStyle = '#ff0000';
-ctx.stroke();
-
 // Etape 3
 ctx.beginPath();
 ctx.moveTo(40,10);
