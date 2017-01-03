@@ -16,6 +16,7 @@ ctx.beginPath();
 ctx.arc(126,94,26,0,2*Math.PI);
 ctx.stroke();
 
+
 // Ajout de la ligne rouge (étape 2)
 /*ctx.beginPath();
 ctx.moveTo(0,120);
@@ -33,6 +34,8 @@ ctx.moveTo(65,60);
 ctx.quadraticCurveTo(100,50,135,60);
 ctx.strokeStyle = '#000000';
 ctx.stroke();
+ctx.fillStyle="lightgray";
+ctx.fill();
 
 // Ajout des pates (étape 4)
 ctx.beginPath();
@@ -53,6 +56,8 @@ ctx.moveTo(140,240);
 ctx.quadraticCurveTo(170,180,200,240);
 ctx.lineTo(140,240);
 ctx.stroke();
+ctx.fillStyle="lightgray";
+ctx.fill();
 
 // Etape 5 : Oeil gauche
 ctx.beginPath();
@@ -87,3 +92,5 @@ ctx.lineTo(190,130);
 ctx.moveTo(100,118);
 ctx.lineTo(190,135);
 ctx.stroke();
+ctx.fillStyle="lightgray";
+ctx.fill();
