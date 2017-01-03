@@ -8,7 +8,7 @@ ctx.moveTo(40,10);
 ctx.lineTo(10,240);
 ctx.stroke();
 
-// Ajout des yeux
+// Ajout des yeux (étape 2)
 ctx.beginPath();
 ctx.arc(74,94,26,0,2*Math.PI);
 ctx.stroke();
@@ -23,7 +23,7 @@ ctx.lineTo(200,120);
 ctx.strokeStyle = '#ff0000';
 ctx.stroke();
 
-// Etape 3
+// Ajout des oreilles (étape 3)
 ctx.beginPath();
 ctx.moveTo(40,10);
 ctx.lineTo(65,60);
@@ -32,4 +32,24 @@ ctx.lineTo(135,60);
 ctx.moveTo(65,60);
 ctx.quadraticCurveTo(100,50,135,60);
 ctx.strokeStyle = '#000000';
+ctx.stroke();
+
+// Ajout des pates (étape 4)
+ctx.beginPath();
+//gauche
+ctx.moveTo(0,240);
+ctx.quadraticCurveTo(30,180,60,240);
+ctx.lineTo(0,240);
+//centre gauche
+ctx.moveTo(60,245);
+ctx.quadraticCurveTo(80,200,100,245);
+ctx.lineTo(60,245);
+//centre droite
+ctx.moveTo(100,245);
+ctx.quadraticCurveTo(120,200,140,245);
+ctx.lineTo(100,245);
+//droite
+ctx.moveTo(140,240);
+ctx.quadraticCurveTo(170,180,200,240);
+ctx.lineTo(140,240);
 ctx.stroke();
