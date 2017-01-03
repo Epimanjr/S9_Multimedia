@@ -94,3 +94,27 @@ ctx.lineTo(190,135);
 ctx.stroke();
 ctx.fillStyle="lightgray";
 ctx.fill();
+
+// Effets sur les pattes (étape 5)
+ctx.beginPath();
+ctx.moveTo(20,240);
+ctx.lineTo(20,230);
+ctx.moveTo(27,240);
+ctx.lineTo(27,230);
+
+ctx.moveTo(180,240);
+ctx.lineTo(180,230);
+ctx.moveTo(173,240);
+ctx.lineTo(173,230);
+
+ctx.moveTo(73,245);
+ctx.lineTo(73,235);
+ctx.moveTo(80,245);
+ctx.lineTo(80,235);
+
+ctx.moveTo(123,245);
+ctx.lineTo(123,235);
+ctx.moveTo(130,245);
+ctx.lineTo(130,235);
+ctx.strokeStyle = '#000000';
+ctx.stroke();
