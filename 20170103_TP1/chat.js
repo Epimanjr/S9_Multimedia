@@ -3,7 +3,8 @@ var ctx = c.getContext("2d");
 ctx.moveTo(10,240);
 ctx.lineTo(190,240);
 ctx.lineTo(160,10);
-ctx.lineTo(40,10);
+//ctx.lineTo(40,10); Etape 3
+ctx.moveTo(40,10);
 ctx.lineTo(10,240);
 ctx.stroke();
 
@@ -20,4 +21,15 @@ ctx.beginPath();
 ctx.moveTo(0,120);
 ctx.lineTo(200,120);
 ctx.strokeStyle = '#ff0000';
+ctx.stroke();
+
+// Etape 3
+ctx.beginPath();
+ctx.moveTo(40,10);
+ctx.lineTo(65,60);
+ctx.moveTo(160,10);
+ctx.lineTo(135,60);
+ctx.moveTo(65,60);
+ctx.quadraticCurveTo(100,50,135,60);
+ctx.strokeStyle = '#000000';
 ctx.stroke();
