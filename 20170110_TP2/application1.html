@@ -38,19 +38,21 @@
             ctx.clearRect(x,y,w,h);
             output = ctx.createImageData(w,h);
             for (i=0; i<w; i++) {
-              for (j=0; j<h; j++) {
-                k = i+w*j;
-                  for (c=0; c<4; c++) {
-                    output.data[4*k+c] = frame.data[4*k+c];
-                  }
-                  r = frame.data[k*4+0];
-                  g = frame.data[k*4+1];
-                  b = frame.data[k*4+2];
-                  //output.data[4*k+3] = 0.2126*r + 0.7152*g + 0.0722*b;
-                  luminosite = 0.2126*r + 0.7152*g + 0.0722*b;
-                  for (c=0; c<5; c++) {
-                    output.data[4*k+c] = luminosite;
-                  }
+              if (i%2==0) {
+                for (j=0; j<h; j++) {
+                  k = i+w*j;
+                    for (c=0; c<4; c++) {
+                      output.data[4*k+c] = frame.data[4*k+c];
+                    }
+                    r = frame.data[k*4+0];
+                    g = frame.data[k*4+1];
+                    b = frame.data[k*4+2];
+                    //output.data[4*k+3] = 0.2126*r + 0.7152*g + 0.0722*b;
+                    luminosite = 0.2126*r + 0.7152*g + 0.0722*b;
+                    for (c=0; c<5; c++) {
+                      output.data[4*k+c] = luminosite;
+                    }
+                }
               }
             }
             ctx.putImageData(output,x,y);
