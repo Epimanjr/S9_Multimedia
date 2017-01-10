@@ -7,7 +7,7 @@
         <link href="css/style_app1.css" rel="stylesheet">
     </head>
     <body>
-        <!-- En-tête pour le rappel du sujet -->
+        <!-- Rappel du sujet -->
         <h1>Manipulation d'une vidéo et canvas</h1>
         <h2>Objectifs :</h2>
         <ul>
@@ -20,24 +20,30 @@
         </canvas>
 
         <script>
-        x = 53;
-        y = 82;
+        x = 24;
+        y = 62;
         window.onload = function() {
+            // Canvas et context
             canvas = document.getElementById("canvas");
             ctx = canvas.getContext("2d");
-            image = document.getElementById("image");
-            ctx.drawImage(image, 0, 0);
+
+            // Vidéo
             video = document.getElementById("video");
             video.addEventListener("timeupdate", updateVideo, false);
+
+            // Image
+            image = document.getElementById("image");
+            ctx.drawImage(image, 0, 0);
         }
         function updateVideo() {
-            var w = 350;
-            var h = 255;
+            var w = 398;
+            var h = 292;
             ctx.drawImage(video,x,y,w,h);
             frame = ctx.getImageData(x,y,w,h);
             ctx.clearRect(x,y,w,h);
             output = ctx.createImageData(w,h);
             for (i=0; i<w; i++) {
+              // Afin de visualiser les "barres", on ne fait pas le traitement à chaque fois
               if (i%2==0) {
                 for (j=0; j<h; j++) {
                   k = i+w*j;
@@ -47,7 +53,6 @@
                     r = frame.data[k*4+0];
                     g = frame.data[k*4+1];
                     b = frame.data[k*4+2];
-                    //output.data[4*k+3] = 0.2126*r + 0.7152*g + 0.0722*b;
                     luminosite = 0.2126*r + 0.7152*g + 0.0722*b;
                     for (c=0; c<5; c++) {
                       output.data[4*k+c] = luminosite;
@@ -59,7 +64,7 @@
         }
         </script>
 
-        <br><br>
+        <!-- Ressources non affichées -->
         <img id="image" src="resources/tv.jpg"/>
         <video id="video" autoplay controls width="600">
             <source src="resources/video.mp4" type="video/mp4">
