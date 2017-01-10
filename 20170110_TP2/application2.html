@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Application 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style_app2.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- En-tête pour le rappel du sujet --> 
+        <h1>Afficher une vidéo/audio avec sous-titrage</h1>
+        <h2>Objectif(s) :</h2>
+        <ul>
+            <li>Afficher les sous-titres en externe</li>
+        </ul>
+
+        <!-- Code répondant au problème --> 
+        <img src="resources/rain.jpg" alt="Image de pluie"><br/>
+        <audio controls>
+            <source src="resources/ChocolateRain.mp3" type="audio/mp3">
+
+            <!--<track kind="subtitles" label="English subtitles" src="resources/ChocolateRain.wsrt" srclang="en" default></track>-->
+        </audio>
+
+        <p id="data" style="height: 150px;"></p>
+
+        <script type="text/javascript" src="js/js_app2.js"></script>
+    </body>
+</html>
