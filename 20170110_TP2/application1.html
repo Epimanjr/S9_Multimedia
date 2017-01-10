@@ -46,9 +46,11 @@
                   r = frame.data[k*4+0];
                   g = frame.data[k*4+1];
                   b = frame.data[k*4+2];
-                  //output.data[4*k+3] = 0.50;
-                  output.data[4*k+3] = 0.2126*r + 0.7152*g + 0.0722*b;
-                  //output.data[4*k + 3] = 0;   // Alpha (transparence)
+                  //output.data[4*k+3] = 0.2126*r + 0.7152*g + 0.0722*b;
+                  luminosite = 0.2126*r + 0.7152*g + 0.0722*b;
+                  for (c=0; c<5; c++) {
+                    output.data[4*k+c] = luminosite;
+                  }
               }
             }
             ctx.putImageData(output,x,y);
