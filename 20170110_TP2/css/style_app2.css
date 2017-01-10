@@ -28,3 +28,8 @@
 #dataheader {
     margin: 0;
 }
+
+#data {
+    font-size: 18px;
+    font-family: century;
+}
