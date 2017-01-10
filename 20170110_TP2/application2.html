@@ -15,14 +15,15 @@
         </ul>
 
         <!-- Code répondant au problème --> 
-        <img src="resources/rain.jpg" alt="Image de pluie"><br/>
-        <audio controls>
-            <source src="resources/ChocolateRain.mp3" type="audio/mp3">
-
-            <!--<track kind="subtitles" label="English subtitles" src="resources/ChocolateRain.wsrt" srclang="en" default></track>-->
-        </audio>
-
-        <p id="data" style="height: 150px;"></p>
+        <div class="div_app2">
+            <video controls src="resources/ChocolateRain.mp3" poster="resources/rain.jpg" width="500" height="300">
+                <track label="English" kind="caption" srclang="en" src="resources/ChocolateRain.wsrt" default>
+                </track>
+            </video>
+        </div>
+        <div class="div_app2">
+            <p id="data" style="height: 150px;"></p>
+        </div>
 
         <script type="text/javascript" src="js/js_app2.js"></script>
     </body>
