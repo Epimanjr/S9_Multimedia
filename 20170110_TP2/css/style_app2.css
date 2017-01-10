@@ -2,3 +2,29 @@
     display: inline-block;
     vertical-align: top;
 }
+
+#objectifs {
+    padding: 0;
+    margin: 0;
+}
+
+.panelObjectifs {
+    width: 60%;
+}
+
+#div_video, .panelObjectifs {
+    margin-left: 10%;
+    margin-top: 20px;
+}
+
+#div_sstitre {
+    padding: 50px;
+    width: 50%;
+}
+#div_sstitre panel {
+    height:100px;
+}
+
+#dataheader {
+    margin: 0;
+}
