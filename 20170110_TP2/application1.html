@@ -20,20 +20,45 @@
         </canvas>
 
         <script>
+        x = 53;
+        y = 82;
+        w = 350;
+        h = 255;
         window.onload = function() {
-            var canvas = document.getElementById("canvas");
-            var ctx = canvas.getContext("2d");
-            var img = document.getElementById("tv");
-            ctx.drawImage(img, 0, 0);
+            canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+            image = document.getElementById("image");
+            ctx.drawImage(image, 0, 0);
+            video = document.getElementById("video");
+            video.addEventListener("timeupdate", updateVideo, false);
+        }
+        function updateVideo() {
+            ctx.drawImage(video,x,y,w,h);
+            frame = ctx.getImageData(x,y,w,h);
+            ctx.clearRect(x,y,w,h);
+            output = ctx.createImageData(w,h);
+            for (x=0; x<w; x++) {
+            	for (y=0; y<h; y++) {
+            		i = x+w*y;
+            			for (c=0; c<4; c++) {
+            				output.data[4*i+c] = frame.data[4*i+c];
+            			}
+            			r = frame.data[i*4+0];
+            			g = frame.data[i*4+1];
+            			b = frame.data[i*4+2];
+                  output.data[4*i+3] = 1;
+                  //output.data[4*i+3] = 0.2126*r + 0.7152*g + 0.0722*b;
+            			//output.data[4*i + 3] = 0;   // Alpha (transparence)
+            	}
+            }
+            ctx.putImageData(output,0,0);
         }
         </script>
 
         <br><br>
-        <img id="tv" src="resources/tv.jpg"/>
-        <div class="video">
-          <video controls width="600">
-              <source src="resources/video.mp4" type="video/mp4">
-          </video>
-        </div>
+        <img id="image" src="resources/tv.jpg"/>
+        <video id="video" autoplay controls width="600">
+            <source src="resources/video.mp4" type="video/mp4">
+        </video>
     </body>
 </html>
