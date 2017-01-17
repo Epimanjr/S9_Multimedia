@@ -5,8 +5,14 @@ currentToFind = "";
 
 // Ajoute un mot à faire correspondre avec une image
 function addToFind() {
+  // Sélectionne un mot aléatoirement
   currentToFind = liste[parseInt(Math.random()*liste.length)];
   $("#tofind").html(currentToFind);
+
+  // Prononce la consigne
+  var utterance = new SpeechSynthesisUtterance("Maintenant, clique sur " + currentToFind);
+  utterance.lang = 'fr-FR';
+  window.speechSynthesis.speak(utterance);
 }
 
 // Lors d'un clique sur une image
