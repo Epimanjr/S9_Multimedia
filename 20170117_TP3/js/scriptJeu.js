@@ -1,5 +1,5 @@
 // Liste des mots possibles
-liste = ["poulet", "dragon", "canard", "cheval", "kangourou", "lama", "lapin", "souris", "planète"];
+liste = ["poulet", "dragon", "canard", "cheval", "kangourou", "lama", "lapin", "souris", "planete"];
 // Mot à trouver actuellement
 currentToFind = "";
 
