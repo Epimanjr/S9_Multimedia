@@ -15,8 +15,6 @@ and open the template in the editor.
         <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-
-
         <!-- Inclusion de la librairie nécessaire -->
         <script type="text/javascript" src="js/headtrackr.js"></script>
     </head>
@@ -51,12 +49,28 @@ and open the template in the editor.
                 var messagep = document.getElementById('headtrackerMessage');
                 messagep.innerHTML = "position: (" + event.x + "," + event.y + ") - h:"+event.height+ ", w:" + event.width; });
 
+            document.addEventListener('facetrackingEvent', function (event) {
+                var fov = htracker.getFOV;
+
+                $(".cx").text(event.x);
+                $(".cy").text(event.y);
+                $(".ang").text(Math.floor(event.angle));
+                $(".fov").text(fov);
+
+            });
         </script>
 
         <button class="btn btn-warning" id="btn-snap">Snapshot!</button>
 
         <!-- Pour afficher le snapshot -->
         <canvas id="outputCanvas" width="320" height="240"></canvas>
+
+        <div class="results">
+            face center x: <span class="cx"></span><br>
+            face center y: <span class="cy"></span><br>
+            face angle: <span class="ang"></span><br>
+            FOV: <span class="fov"></span><br>               
+        </div>
 
         <script type="text/javascript" src="js/script.js"></script>
     </body>

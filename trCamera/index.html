@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Augmented reality mask simulator</title>
+        <!-- STYLE -->
+        <link rel="stylesheet" href="style/style.css" />
+
+    </head>
+
+    <body>
+        <!-- CONTENT -->
+        <canvas id="inputCanvas" width="320" height="240"></canvas>
+        <video id="inputVideo" autoplay loop style="display: none"></video>
+        <canvas id="debugCanvas" width="320" height="240"></canvas>
+
+        <div class="results">
+            face center x: <span class="cx"></span><br>
+            face center y: <span class="cy"></span><br>
+               face angle: <span class="ang"></span><br>
+                      FOV: <span class="fov"></span><br>               
+        </div>
+
+        <!-- SCRIPTS -->
+        <script   src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="js/inc/headtrackr.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
