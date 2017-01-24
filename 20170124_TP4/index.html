@@ -12,9 +12,10 @@ and open the template in the editor.
 
         <link href="css/style.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-        <script type="text/javascript" src="js/script.js"></script>
+        
 
         <!-- Inclusion de la librairie nécessaire -->
         <script type="text/javascript" src="js/headtrackr.js"></script>
@@ -35,5 +36,14 @@ and open the template in the editor.
             htracker.init(videoInput, canvasInput);
             htracker.start();
         </script>
+        
+        <button class="btn btn-warning" id="btn-snap">Snapshot!</button>
+        
+        <div id="snapshot">
+            <!-- On mettre l'image capturé ICI -->
+            
+        </div>
+        
+        <script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>
