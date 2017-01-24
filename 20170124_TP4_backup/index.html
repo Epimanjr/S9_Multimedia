@@ -15,7 +15,7 @@ and open the template in the editor.
         <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-
+        
 
         <!-- Inclusion de la librairie nécessaire -->
         <script type="text/javascript" src="js/headtrackr.js"></script>
@@ -31,33 +31,19 @@ and open the template in the editor.
         <script type="text/javascript">
             var videoInput = document.getElementById('inputVideo');
             var canvasInput = document.getElementById('inputCanvas');
-            var ctx = canvasInput.getContext('2d');
-
-            /*canvasInput.style.position = "absolute";*/
-            canvasInput.style.top = '0px';
-            canvasInput.style.zIndex = '100001';
-            canvasInput.style.display = 'block';
 
             var htracker = new headtrackr.Tracker();
             htracker.init(videoInput, canvasInput);
             htracker.start();
-
-            document.addEventListener("facetrackingEvent", function (event) {
-                ctx.clearRect(0, 0, 320, 240);
-                ctx.strokeStyle = "#00CC00";
-                ctx.fillStyle = "rgb(200,0,0)";
-                ctx.fillRect(event.x, event.y, 10, 10);
-                ctx.strokeRect(event.x - (event.width / 2), event.y - (event.height / 2), event.width, event.height);
-                var messagep = document.getElementById('headtrackerMessage');
-                messagep.innerHTML = "position: (" + event.x + "," + event.y + ") - h:"+event.height+ ", w:" + event.width; });
-
         </script>
-
+        
         <button class="btn btn-warning" id="btn-snap">Snapshot!</button>
-
-        <!-- Pour afficher le snapshot -->
-        <canvas id="outputCanvas" width="320" height="240"></canvas>
-
+        
+        <div id="snapshot">
+            <!-- On mettre l'image capturé ICI -->
+            
+        </div>
+        
         <script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>
