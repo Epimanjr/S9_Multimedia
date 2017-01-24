@@ -19,11 +19,11 @@ and open the template in the editor.
         <script type="text/javascript" src="js/headtrackr.js"></script>
     </head>
     <body>
-        <div class="jumbotron" style="text-align: center;">
+        <!--<div class="jumbotron" style="text-align: center;">
             <h1>TP4: WebCam</h1>
-        </div>
+        </div>-->
 
-        <!-- Here solution for TP4 --> 
+        <!-- Here solution for TP4 -->
         <canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
         <video id="inputVideo" autoplay loop></video>
         <script type="text/javascript">
@@ -32,7 +32,7 @@ and open the template in the editor.
             var ctx = canvasInput.getContext('2d');
 
             canvasInput.style.position = "absolute";
-            canvasInput.style.top = '968px';
+            canvasInput.style.top = '0px';
             canvasInput.style.zIndex = '100001';
             canvasInput.style.display = 'block';
 
