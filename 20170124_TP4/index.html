@@ -26,6 +26,11 @@ and open the template in the editor.
         <!-- Here solution for TP4 -->
         <canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
         <video id="inputVideo" autoplay loop></video>
+        
+        <br><br>
+        
+        <img id="tchernobyl" width="220" height="277" src="images/mask.png" alt="The Mask">
+        
         <script type="text/javascript">
             var videoInput = document.getElementById('inputVideo');
             var canvasInput = document.getElementById('inputCanvas');
@@ -43,6 +48,8 @@ and open the template in the editor.
             document.addEventListener("facetrackingEvent", function (event) {
                 ctx.strokeStyle = "#00CC00";
                 ctx.fillStyle = "rgb(200,0,0)";
+                var img = document.getElementById("tchernobyl");
+                ctx.drawImage(img, event.x, event.y);
                 ctx.fillRect(event.x, event.y, 10, 10);
                 ctx.strokeRect(event.x - (event.width / 2), event.y - (event.height / 2), event.width, event.height);
                 var messagep = document.getElementById('headtrackerMessage');
