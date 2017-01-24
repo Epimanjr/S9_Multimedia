@@ -49,9 +49,9 @@ and open the template in the editor.
                 ctx.strokeStyle = "#00CC00";
                 ctx.fillStyle = "rgb(200,0,0)";
                 var img = document.getElementById("tchernobyl");
-                ctx.drawImage(img, event.x, event.y, 100, 100);
+                ctx.drawImage(img, event.x - 50, event.y - 50, 100, 100);
                 ctx.fillRect(event.x, event.y, 10, 10);
-                ctx.strokeRect(event.x - (event.width / 2), event.y - (event.height / 2), event.width, event.height);
+                /*ctx.strokeRect(event.x - (event.width / 2), event.y - (event.height / 2), event.width, event.height);*/
                 var messagep = document.getElementById('headtrackerMessage');
                 messagep.innerHTML = "position: (" + event.x + "," + event.y + ") - h:"+event.height+ ", w:" + event.width; });
 
