@@ -13,9 +13,9 @@ and open the template in the editor.
         <link href="css/style.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        
+
         <script type="text/javascript" src="js/script.js"></script>
-        
+
         <!-- Inclusion de la librairie nécessaire -->
         <script type="text/javascript" src="js/headtrackr.min.js"></script>
     </head>
@@ -23,7 +23,17 @@ and open the template in the editor.
         <div class="jumbotron" style="text-align: center;">
             <h1>TP4: WebCam</h1>
         </div>
-        
+
         <!-- Here solution for TP4 --> 
+        <canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
+        <video id="inputVideo" autoplay loop></video>
+        <script type="text/javascript">
+            var videoInput = document.getElementById('inputVideo');
+            var canvasInput = document.getElementById('inputCanvas');
+
+            var htracker = new headtrackr.Tracker();
+            htracker.init(videoInput, canvasInput);
+            htracker.start();
+        </script>
     </body>
 </html>
